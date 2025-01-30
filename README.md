@@ -10,15 +10,15 @@ A Python-based **Algorithm Visualizer** that demonstrates sorting, searching, an
 
 ## **📂 Project Structure**  
 ## algorithm-visualizer/
-## │── algorithms/                # Algorithm implementations
-## │── visualizer/                # Matplotlib-based visualizers
-## │── utils/                     # Helper functions & configurations
-## │── main.py                    # Entry point
-## │── requirements.txt           # Dependencies
-## │── README.md                  # Documentation
+## ── algorithms/                # Algorithm implementations
+## ── visualizer/                # Matplotlib-based visualizers
+## ── utils/                     # Helper functions & configurations
+## ── main.py                    # Entry point
+## ── requirements.txt           # Dependencies
+## ── README.md                  # Documentation
 
 
-## **🚀 Installation & Usage**  
+## ** Installation & Usage**  
 1️⃣ Clone the repository:  
 ```bash
 git clone https://github.com/your-username/algorithm-visualizer.git
