@@ -17,6 +17,7 @@ import sys
 from visualizer.sorting_visualizer import visualize_sorting
 from visualizer.pathfinding_visualizer import visualize_pathfinding
 from visualizer.searching_visualizer import visualize_search
+from algorithms.algorithm_summary import display_algorithm_summary_gui
 
 import random
 import string
@@ -41,6 +42,7 @@ def display_menu():
     print("1️⃣ - Sorting Algorithms")
     print("2️⃣ - Pathfinding Algorithms")
     print("3️⃣ - Searching Algorithms")
+    print("4️⃣ - 📖 Algorithm Summary (GUI)")
     print("0️⃣ - Exit")
 
 
@@ -59,6 +61,8 @@ def main():
         elif choice == "3":
             print("\n▶ Running Searching Visualizer...")
             visualize_search()
+        elif choice == "4":
+            display_algorithm_summary_gui()  
         elif choice == "0":
             print("\n👋 Exiting the Algorithm Visualizer. Goodbye!")
             sys.exit()

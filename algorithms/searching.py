@@ -37,6 +37,17 @@ def binary_search(arr, target):
 
 
 def two_pointer_method(arr, target):
-    """Performs a search using the two pointer method to find the target in the array"""
-    # TODO finish this function
-    pass
+    """Performs a search using the two-pointer method to find a pair that sums to the target."""
+    left = 0
+    right = len(arr) - 1
+
+    while left < right:
+        current_sum = arr[left] + arr[right]
+        if current_sum == target:
+            return f"Pair found: {arr[left]}, {arr[right]} (Indexes: {left}, {right})"
+        elif current_sum < target:
+            left += 1  # sum increases, left pointer moves to the right
+        else:
+            right -= 1  # sum decreases, right pointer moves to the left
+
+    return "No pair found."
