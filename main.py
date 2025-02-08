@@ -34,6 +34,7 @@ list_numbers = [
 list_letters = [random.choice(string.ascii_letters) for _ in range(10)]
 list_words = ["".join(random.choices(string.ascii_lowercase, k=5)) for _ in range(5)]
 
+
 def display_menu():
     """Displays the main menu options for the algorithm visualizer."""
     print("\n📌 Algorithm Visualizer Menu")
@@ -63,7 +64,6 @@ def main():
             sys.exit()
         else:
             print("❌ Invalid choice. Please enter a valid number.")
-
 
 
 if __name__ == "__main__":

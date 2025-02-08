@@ -9,6 +9,7 @@ import matplotlib.animation as animation
 import random
 from algorithms.searching import linear_search, binary_search  # Import algorithms
 
+
 def animate_linear_search(arr, target):
     """Animates the Linear Search process step by step."""
     fig, ax = plt.subplots(figsize=(10, 2))
@@ -17,8 +18,22 @@ def animate_linear_search(arr, target):
     ax.set_xlim(-1, len(arr))
     ax.set_ylim(-1, 1)
 
-    rects = [ax.add_patch(plt.Rectangle((i, 0), 1, 1, color='gray', edgecolor='black')) for i in range(len(arr))]
-    text_labels = [ax.text(i + 0.5, 0.5, str(arr[i]), ha='center', va='center', fontsize=12, color='white') for i in range(len(arr))]
+    rects = [
+        ax.add_patch(plt.Rectangle((i, 0), 1, 1, color="gray", edgecolor="black"))
+        for i in range(len(arr))
+    ]
+    text_labels = [
+        ax.text(
+            i + 0.5,
+            0.5,
+            str(arr[i]),
+            ha="center",
+            va="center",
+            fontsize=12,
+            color="white",
+        )
+        for i in range(len(arr))
+    ]
 
     # Track search steps
     search_steps = []
@@ -35,15 +50,18 @@ def animate_linear_search(arr, target):
         """Updates visualization at each search step."""
         if frame < len(search_steps):
             i = search_steps[frame]
-            rects[i].set_facecolor('blue')  # Highlight current checked element
+            rects[i].set_facecolor("blue")  # Highlight current checked element
             if i == found_index:
-                rects[i].set_facecolor('green')  # Target found, highlight green
+                rects[i].set_facecolor("green")  # Target found, highlight green
                 ani.event_source.stop()  # Stop animation immediately
         return rects
 
-    ani = animation.FuncAnimation(fig, update, frames=len(search_steps), repeat=False, interval=500)
+    ani = animation.FuncAnimation(
+        fig, update, frames=len(search_steps), repeat=False, interval=500
+    )
     plt.title(f"Linear Search for {target}")
     plt.show()
+
 
 def animate_binary_search(arr, target):
     """Animates the Binary Search process step by step."""
@@ -53,8 +71,22 @@ def animate_binary_search(arr, target):
     ax.set_xlim(-1, len(arr))
     ax.set_ylim(-1, 1)
 
-    rects = [ax.add_patch(plt.Rectangle((i, 0), 1, 1, color='gray', edgecolor='black')) for i in range(len(arr))]
-    text_labels = [ax.text(i + 0.5, 0.5, str(arr[i]), ha='center', va='center', fontsize=12, color='white') for i in range(len(arr))]
+    rects = [
+        ax.add_patch(plt.Rectangle((i, 0), 1, 1, color="gray", edgecolor="black"))
+        for i in range(len(arr))
+    ]
+    text_labels = [
+        ax.text(
+            i + 0.5,
+            0.5,
+            str(arr[i]),
+            ha="center",
+            va="center",
+            fontsize=12,
+            color="white",
+        )
+        for i in range(len(arr))
+    ]
 
     search_steps = []
     left, right = 0, len(arr) - 1
@@ -72,25 +104,32 @@ def animate_binary_search(arr, target):
         """Updates visualization at each search step."""
         if frame < len(search_steps):
             mid = search_steps[frame]
-            rects[mid].set_facecolor('blue')  # Highlight mid-point
+            rects[mid].set_facecolor("blue")  # Highlight mid-point
             if arr[mid] == target:
-                rects[mid].set_facecolor('green')  # If found, highlight green
+                rects[mid].set_facecolor("green")  # If found, highlight green
                 return
         return rects
 
-    ani = animation.FuncAnimation(fig, update, frames=len(search_steps), repeat=False, interval=700)
+    ani = animation.FuncAnimation(
+        fig, update, frames=len(search_steps), repeat=False, interval=700
+    )
     plt.title(f"Binary Search for {target}")
     plt.show()
 
+
 def visualize_search():
     """Runs the search visualization."""
-    
+
     # Generate a sorted list of numbers for binary search
     arr = sorted([random.randint(1, 100) for _ in range(15)])
-    target = random.choice(arr + [random.randint(101, 150)])  # Pick an existing or new target
+    target = random.choice(
+        arr + [random.randint(101, 150)]
+    )  # Pick an existing or new target
     # Generate a sorted list of numbers for binary search
     arr = sorted([random.randint(1, 100) for _ in range(15)])
-    target = random.choice(arr + [random.randint(101, 150)])  # Pick an existing or new target
+    target = random.choice(
+        arr + [random.randint(101, 150)]
+    )  # Pick an existing or new target
 
     print("\n🔍 Welcome to the Search Algorithm Visualizer!\n")
     print("📌 How this works:")
@@ -124,6 +163,6 @@ def visualize_search():
     else:
         print("❌ Invalid choice. Exiting search visualization.")
 
+
 if __name__ == "__main__":
     visualize_search()
-
